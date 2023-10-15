@@ -26,6 +26,14 @@
 
 ### Менее необходимые программы:
 
+#### MoreWaita icon theme
+
+`sudo dnf copr enable dusansimic/themes`
+
+`sudo dnf install morewaita-icon-theme`
+
+Потом необходимо эту тему включить в GNOME Tweaks.
+
 #### Создание видео:
 
 `flatpak install flathub com.obsproject.Studio`
