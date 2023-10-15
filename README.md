@@ -30,7 +30,7 @@
 
 `flatpak install flathub com.obsproject.Studio`
 
-`flatpak install flathub org.pitivi.Pitivi` (или `https://flathub.org/apps/org.kde.kdenlive`)
+`flatpak install flathub org.pitivi.Pitivi` (или `flatpak install flathub org.kde.kdenlive`)
 
 #### Мессенджеры:
 
