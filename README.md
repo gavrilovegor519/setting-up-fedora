@@ -16,7 +16,7 @@
 
 `sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld`
 
-`sudo dnf install gnome-extensions-app gnome-tweaks google-chrome-stable curl cabextract xorg-x11-font-utils fontconfig`
+`sudo dnf install gnome-extensions-app gnome-tweaks google-chrome-stable unrar curl cabextract xorg-x11-font-utils fontconfig`
 
 `sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm`
 
@@ -49,7 +49,7 @@
 - Uget - `uget` в DNF.
 - Transmission - `transmission` в DNF.
 
-### Среды разработки:
+### Java (разработка):
 
 Сначала ставим через DNF: `java-17-openjdk-devel`
 
@@ -59,7 +59,7 @@
 
 Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика.
 
-Maven - официальный сайт.
+Maven - официальный сайт, либо DNF (`maven`).
 
 ### Docker:
 
