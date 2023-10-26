@@ -51,15 +51,35 @@
 
 ### Java (разработка):
 
-Сначала ставим через DNF: `java-17-openjdk-devel`
+Сначала ставим через DNF: `sudo dnf install java-17-openjdk-devel`
 
-Если нужен Java 11 - `java-11-openjdk-devel`
+Если нужен Java 11 - `sudo dnf install java-11-openjdk-devel`
 
-Если нужен Java 8 - `java-1.8.0-openjdk-devel icedtea-web`
+Если нужен Java 8 - `sudo dnf install java-1.8.0-openjdk-devel icedtea-web`
 
 Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика.
 
-Maven - официальный сайт, либо DNF (`maven`).
+Maven - официальный сайт, либо через DNF (`sudo dnf install maven`).
+
+### PHP
+
+Если вам нужен только CLI для очень простых скриптов: `php-cli` в DNF.
+
+Если вам нужен LAMP, то присмотритесь лучше к решениям на базе Docker-контейнеров. Готовые скрипты для Docker Compose вы можете найти в Интернете.
+
+Если вам нужен PHP для Laravel:
+
+`sudo dnf install php php-common php-cli php-gd php-mysqlnd php-curl php-intl php-mbstring php-bcmath php-xml php-zip composer`
+
+После чего вы можете генерировать проекты на "Ларе" через эту команду:
+
+`composer create-project laravel/laravel <project_name>` (где `<project_name>` - имя проекта)
+
+Запуск проекта на "Ларе":
+
+`cd my_example_app`
+
+`php artisan serve`
 
 ### Docker:
 
@@ -69,7 +89,7 @@ Maven - официальный сайт, либо DNF (`maven`).
 
 После этого надо установить следующие пакеты через DNF:
 
-`docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
+`sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin`
 
 Потом:
 
@@ -89,7 +109,7 @@ Maven - официальный сайт, либо DNF (`maven`).
 
 После этого через DNF:
 
-`VirtualBox-7.0 @development-tools kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras`
+`sudo dnf install VirtualBox-7.0 @development-tools kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras`
 
 Потом:
 
