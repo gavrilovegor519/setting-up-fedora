@@ -77,7 +77,7 @@ Maven - официальный сайт, либо через DNF (`sudo dnf inst
 
 Запуск проекта на "Ларе":
 
-`cd my_example_app`
+`cd <project_name>`
 
 `php artisan serve`
 
