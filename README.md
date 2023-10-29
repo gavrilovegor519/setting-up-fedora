@@ -59,7 +59,7 @@
 
 Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика.
 
-Maven - официальный сайт, либо через DNF (`sudo dnf install maven`).
+Maven - официальный сайт.
 
 ### PHP
 
