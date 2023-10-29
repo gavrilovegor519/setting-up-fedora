@@ -55,7 +55,7 @@
 
 Если нужен Java 11 - `sudo dnf install java-11-openjdk-devel`
 
-Если нужен Java 8 - `sudo dnf install java-1.8.0-openjdk-devel icedtea-web-devel openjfx8-devel java-1.8.0-openjdk-openjfx-devel`
+Если нужен Java 8 - `sudo dnf install java-1.8.0-openjdk-devel icedtea-web-devel openjfx8-devel java-1.8.0-openjdk-openjfx-devel rhino-engine`
 
 Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика.
 
