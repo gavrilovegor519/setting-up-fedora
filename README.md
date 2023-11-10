@@ -66,7 +66,7 @@ sudo dnf install java-11-openjdk-devel
 sudo dnf install java-1.8.0-openjdk-devel
 ```
 
-Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика.
+Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика, либо Flatpak.
 
 Maven:
 
@@ -75,6 +75,8 @@ sudo dnf install maven
 ```
 
 ### PHP
+
+VS Code/PHPstorm - оф. сайт, либо Flatpak.
 
 Если вам нужен только CLI для очень простых скриптов: `php-cli` в DNF.
 
