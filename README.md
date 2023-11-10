@@ -10,8 +10,9 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 sudo dnf groupupdate sound-and-video
 sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
-sudo dnf install gnome-extensions-app gnome-tweaks google-chrome-stable unrar curl cabextract xorg-x11-font-utils fontconfig
+sudo dnf install gnome-extensions-app gnome-tweaks unrar curl cabextract xorg-x11-font-utils fontconfig
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+flatpak install flathub com.google.Chrome com.mattjakeman.ExtensionManager
 ```
 
 Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator`.
