@@ -38,7 +38,7 @@ flatpak install flathub com.obsproject.Studio org.pitivi.Pitivi
 ### Мессенджеры:
 
 - Viber - официальный сайт (RPM).
-- Telegram - `flatpak install flathub org.telegram.desktop`.
+- Telegram - `sudo dnf install telegram-desktop`.
 - Почта - `geary` в DNF.
 
 ### Загрузка файлов:
