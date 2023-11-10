@@ -37,14 +37,13 @@ flatpak install flathub com.obsproject.Studio org.pitivi.Pitivi
 
 ### Мессенджеры:
 
-- Viber - viber.com (RPM).
 - Telegram - `flatpak install flathub org.telegram.desktop`.
-- Почта - `geary` в DNF.
+- Почта - `flatpak install flathub org.gnome.Geary`.
 
 ### Загрузка файлов:
 
 - Uget - `uget` в DNF.
-- Transmission - `transmission` в DNF.
+- Transmission - `flatpak install flathub com.transmissionbt.Transmission`.
 
 ### Java (разработка):
 
