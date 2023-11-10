@@ -18,15 +18,6 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 
 ## Менее необходимые программы:
 
-### MoreWaita icon theme
-
-```shell
-sudo dnf copr enable dusansimic/themes
-sudo dnf install morewaita-icon-theme
-```
-
-Потом необходимо эту тему включить в GNOME Tweaks.
-
 ### Создание видео:
 
 ```shell
@@ -65,7 +56,7 @@ sudo dnf install java-11-openjdk-devel
 sudo dnf install java-1.8.0-openjdk-devel
 ```
 
-Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика, либо Snap.
+Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика, либо Snap (если есть официальный пакет).
 
 Maven:
 
