@@ -68,7 +68,11 @@ sudo dnf install java-1.8.0-openjdk-devel
 
 Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика.
 
-Maven - официальный сайт разработчика.
+Maven:
+
+```shell
+sudo dnf install maven
+```
 
 ### PHP
 
