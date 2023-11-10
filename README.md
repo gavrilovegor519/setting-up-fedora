@@ -113,7 +113,6 @@ sudo systemctl enable containerd.service
 ### VirtualBox:
 
 ```shell
-sudo dnf config-manager --add-repo https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
-sudo dnf install VirtualBox-7.0 @development-tools kernel-headers kernel-devel dkms elfutils-libelf-devel qt5-qtx11extras
+sudo dnf install VirtualBox
 sudo usermod -a -G vboxusers $USER
 ```
