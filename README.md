@@ -16,6 +16,14 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 
 Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator`.
 
+### Тюнинг системы
+
+Ускорение DNF: https://g-soft.info/linux/9514/kak-uvelichit-skorost-dnf-v-fedora-linux/
+
+Отключение Wi-Fi Powersave для стабилизации Wi-Fi-соединения: https://discussion.fedoraproject.org/t/tip-lower-wifi-latency-by-disabling-wifi-power-management/74534
+
+Лимитирование объёма журнала systemd-journald: https://andreaskaris.github.io/blog/linux/setting-journalctl-limits/
+
 ## Менее необходимые программы:
 
 ### Создание видео:
