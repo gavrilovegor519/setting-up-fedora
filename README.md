@@ -16,8 +16,17 @@ sudo dnf groupupdate sound-and-video
 sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
 sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
 
-# Google Chrome, утилиты для кастомизации GNOME, разархиватор для RAR, а также зависимости для установки шрифтов от Microsoft:
-sudo dnf install google-chrome-stable gnome-tweaks gnome-extensions-app unrar curl cabextract xorg-x11-font-utils fontconfig
+# Google Chrome:
+sudo dnf install google-chrome-stable
+
+# Утилиты для кастомизации GNOME:
+sudo dnf install gnome-tweaks gnome-extensions-app
+
+# Разархиватор для RAR:
+sudo dnf install unrar
+
+# Зависимости для установки шрифтов от Microsoft:
+sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
 
 # Установка шрифтов от Microsoft
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
