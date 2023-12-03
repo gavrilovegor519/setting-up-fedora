@@ -118,6 +118,7 @@ sudo docker run hello-world
 sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
+sudo docker system prune -a --volumes
 ```
 
 ### VirtualBox:
