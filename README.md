@@ -26,6 +26,12 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 
 ## Менее необходимые программы:
 
+### ONLYOFFICE
+
+```shell
+flatpak install flathub org.onlyoffice.desktopeditors
+```
+
 ### Создание видео:
 
 ```shell
