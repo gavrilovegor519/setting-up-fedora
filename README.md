@@ -66,13 +66,31 @@ flatpak install flathub com.obsproject.Studio org.pitivi.Pitivi
 
 ### Мессенджеры:
 
-- Telegram - `flatpak install flathub org.telegram.desktop`.
-- Почта - `flatpak install flathub org.gnome.Geary`.
+#### Telegram
+
+```shell
+flatpak install flathub org.telegram.desktop
+```
+
+#### Почта
+
+```shell
+flatpak install flathub org.gnome.Geary
+```
 
 ### Загрузка файлов:
 
-- Uget - `uget` в DNF.
-- Transmission - `flatpak install flathub com.transmissionbt.Transmission`.
+#### Uget
+
+```shell
+sudo dnf install uget aria2
+```
+
+#### Transmission
+
+```shell
+flatpak install flathub com.transmissionbt.Transmission
+```
 
 ### Java (разработка):
 
