@@ -34,6 +34,12 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 
 Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator`.
 
+### Flatseal
+
+```shell
+flatpak install flathub com.github.tchx84.Flatseal
+```
+
 ### Тюнинг системы
 
 Ускорение DNF: https://g-soft.info/linux/9514/kak-uvelichit-skorost-dnf-v-fedora-linux/
