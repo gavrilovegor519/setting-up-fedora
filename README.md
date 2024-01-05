@@ -144,4 +144,9 @@ sudo docker system prune -a --volumes
 ```shell
 sudo dnf install VirtualBox
 sudo usermod -a -G vboxusers $USER
+
+# Если включён Secure Boot:
+sudo /usr/sbin/kmodgenca
+sudo akmods --force --rebuild
+sudo mokutil --import /etc/pki/akmods/certs/public_key.der
 ```
