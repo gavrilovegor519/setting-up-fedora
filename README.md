@@ -40,6 +40,16 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 flatpak install flathub com.github.tchx84.Flatseal
 ```
 
+### Snap
+
+```shell
+sudo dnf install snapd
+# дальше мы перезагружаемся
+sudo ln -s /var/lib/snapd/snap /snap
+sudo snap install hello-world # 2 раза вводим команду
+hello-world # проверяем
+```
+
 ### Тюнинг системы
 
 Ускорение DNF: https://g-soft.info/linux/9514/kak-uvelichit-skorost-dnf-v-fedora-linux/
