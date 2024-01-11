@@ -122,6 +122,12 @@ Maven:
 sudo dnf install maven
 ```
 
+IDEA Community:
+
+```shell
+sudo snap install intellij-idea-community --classic
+```
+
 ### PHP
 
 VS Code/PHPstorm - оф. сайт, либо Snap.
@@ -149,6 +155,21 @@ composer create-project laravel/laravel <project_name>
 ```shell
 cd <project_name>
 php artisan serve
+```
+
+### JavaScript
+
+#### Node.js
+
+```shell
+curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+sudo dnf install -y nodejs
+```
+
+### VS Code
+
+```shell
+sudo snap install code --classic
 ```
 
 ### Docker:
