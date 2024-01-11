@@ -74,6 +74,10 @@ flatpak install flathub com.obsproject.Studio org.kde.kdenlive
 flatpak install flathub org.telegram.desktop
 ```
 
+#### ВК
+
+https://vk.me/app
+
 #### Почта
 
 ```shell
@@ -116,13 +120,13 @@ sudo dnf install java-1.8.0-openjdk-devel
 
 Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика, либо Snap (если есть официальный пакет).
 
-Maven:
+#### Maven
 
 ```shell
 sudo dnf install maven
 ```
 
-IDEA Community:
+#### IDEA Community
 
 ```shell
 sudo snap install intellij-idea-community --classic
@@ -157,13 +161,12 @@ cd <project_name>
 php artisan serve
 ```
 
-### JavaScript
-
-#### Node.js
+### Node.js
 
 ```shell
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
 sudo dnf install -y nodejs
+sudo dnf install gcc-c++ make
 ```
 
 ### VS Code
@@ -171,6 +174,16 @@ sudo dnf install -y nodejs
 ```shell
 sudo snap install code --classic
 ```
+
+### Postman
+
+```shell
+sudo snap install postman
+```
+
+### MongoDB Compass
+
+https://www.mongodb.com/try/download/compass
 
 ### Docker:
 
