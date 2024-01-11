@@ -63,10 +63,8 @@ flatpak install flathub org.onlyoffice.desktopeditors
 ### Создание видео:
 
 ```shell
-flatpak install flathub com.obsproject.Studio org.pitivi.Pitivi
+flatpak install flathub com.obsproject.Studio org.kde.kdenlive
 ```
-
-(или `org.kde.kdenlive`, если надо именно Kdenlive, а не Pitivi)
 
 ### Мессенджеры:
 
