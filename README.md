@@ -12,10 +12,6 @@ sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 sudo dnf groupupdate sound-and-video
 
-# Если вы используйте видеокарту от AMD:
-sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
-sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
-
 # Google Chrome:
 sudo dnf install google-chrome-stable
 
@@ -53,8 +49,6 @@ hello-world # Проверяем
 ### Тюнинг системы
 
 Ускорение DNF: https://g-soft.info/linux/9514/kak-uvelichit-skorost-dnf-v-fedora-linux/
-
-Отключение Wi-Fi Powersave для стабилизации Wi-Fi-соединения: https://discussion.fedoraproject.org/t/tip-lower-wifi-latency-by-disabling-wifi-power-management/74534
 
 Лимитирование объёма журнала systemd-journald: https://andreaskaris.github.io/blog/linux/setting-journalctl-limits/
 
