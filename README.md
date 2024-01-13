@@ -74,10 +74,6 @@ flatpak install flathub com.obsproject.Studio org.kde.kdenlive
 flatpak install flathub org.telegram.desktop
 ```
 
-#### ВК
-
-https://vk.me/app
-
 #### Почта
 
 ```shell
