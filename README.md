@@ -164,8 +164,7 @@ php artisan serve
 ### Node.js
 
 ```shell
-curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
-sudo dnf install -y nodejs
+sudo snap install node --classic
 sudo dnf install gcc-c++ make
 ```
 
