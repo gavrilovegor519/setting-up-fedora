@@ -42,8 +42,10 @@ flatpak install flathub com.github.tchx84.Flatseal
 sudo dnf install snapd
 # Дальше мы перезагружаемся
 sudo ln -s /var/lib/snapd/snap /snap
-sudo snap install hello-world # 2 раза вводим команду
-hello-world # Проверяем
+# 2 раза вводим команду
+sudo snap install hello-world
+# Проверяем
+hello-world
 ```
 
 ### Тюнинг системы
