@@ -30,12 +30,6 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 
 Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator`.
 
-### Flatseal
-
-```shell
-flatpak install flathub com.github.tchx84.Flatseal
-```
-
 ### Snap
 
 ```shell
@@ -87,7 +81,7 @@ flatpak install flathub org.gnome.Geary
 #### Uget
 
 ```shell
-sudo dnf install uget aria2
+sudo dnf install uget
 ```
 
 #### Transmission
