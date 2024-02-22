@@ -48,6 +48,14 @@ hello-world
 
 Лимитирование объёма журнала systemd-journald: https://andreaskaris.github.io/blog/linux/setting-journalctl-limits/
 
+### Разрешения в Flatseal
+
+Эти разрешения надо добавлять в качестве глобальных:
+
+![Разрешения для GPU](flatseal-gpu.png "Разрешения для GPU")
+
+![Разрешения для Dbus](flatseal-dbus.png "Разрешения для Dbus")
+
 ## Менее необходимые программы:
 
 ### ONLYOFFICE
