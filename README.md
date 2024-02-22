@@ -48,7 +48,13 @@ hello-world
 
 Лимитирование объёма журнала systemd-journald: https://andreaskaris.github.io/blog/linux/setting-journalctl-limits/
 
-### Разрешения в Flatseal
+### Flatseal
+
+```shell
+flatpak install flathub com.github.tchx84.Flatseal
+```
+
+#### Разрешения в Flatseal
 
 Эти разрешения надо добавлять в качестве глобальных:
 
