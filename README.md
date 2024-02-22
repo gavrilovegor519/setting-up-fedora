@@ -56,13 +56,15 @@ hello-world
 flatpak install flathub org.onlyoffice.desktopeditors
 ```
 
-### OBS Studio:
+### Создание видео
+
+#### OBS Studio:
 
 ```shell
 flatpak install flathub com.obsproject.Studio
 ```
 
-### Audacity
+#### Audacity
 
 ```shell
 flatpak install flathub org.audacityteam.Audacity
