@@ -56,10 +56,16 @@ hello-world
 flatpak install flathub org.onlyoffice.desktopeditors
 ```
 
-### Создание видео:
+### OBS Studio:
 
 ```shell
-flatpak install flathub com.obsproject.Studio org.kde.kdenlive
+flatpak install flathub com.obsproject.Studio
+```
+
+### Audacity
+
+```shell
+flatpak install flathub org.audacityteam.Audacity
 ```
 
 ### Мессенджеры:
@@ -81,7 +87,7 @@ flatpak install flathub org.gnome.Geary
 #### Uget
 
 ```shell
-sudo dnf install uget
+flatpak install flathub com.ugetdm.uGet
 ```
 
 #### Transmission
