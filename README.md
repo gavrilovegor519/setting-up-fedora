@@ -132,6 +132,13 @@ sudo dnf install maven
 sudo snap install intellij-idea-community --classic
 ```
 
+### Настройка Git
+
+```shell
+git config --global user.name "John Doe" # здесь вписать ваше имя и фамилию
+git config --global user.email johndoe@example.com # здесь вписать ваш E-Mail
+```
+
 ### PHP
 
 VS Code/PHPstorm - оф. сайт, либо Snap.
