@@ -58,9 +58,17 @@ flatpak install flathub com.github.tchx84.Flatseal
 
 Эти разрешения надо добавлять в качестве глобальных:
 
-![Разрешения для GPU](flatseal-gpu.png "Разрешения для GPU")
+В **Device** надо добавить разрешение GPU (чтобы программы получили доступ к GPU).
 
-![Разрешения для Dbus](flatseal-dbus.png "Разрешения для Dbus")
+В **Session bus -> Переговоры** надо добавить следующие шины:
+
+- com.canonical.AppMenu.Registrar
+- com.canonical.dbusmenu
+- com.canonical.indicator.application
+- org.ayatana.indicator.application
+- org.freedesktop.Notifications
+- org.kde.StatusNotifierWatcher
+- org.kde.StatusNotifierItem
 
 ## Менее необходимые программы:
 
