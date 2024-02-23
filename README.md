@@ -40,8 +40,6 @@ sudo ln -s /var/lib/snapd/snap /snap
 sudo snap install hello-world
 # Проверяем
 hello world
-# Устанавливаем темы GNOME для изолированных пакетов
-sudo snap install gtk-common-themes
 ```
 
 ### Тюнинг системы
