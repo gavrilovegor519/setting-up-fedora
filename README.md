@@ -39,7 +39,9 @@ sudo ln -s /var/lib/snapd/snap /snap
 # 2 раза вводим команду
 sudo snap install hello-world
 # Проверяем
-hello-world
+hello world
+# Устанавливаем темы GNOME для изолированных пакетов
+sudo snap install gtk-common-themes
 ```
 
 ### Тюнинг системы
@@ -157,8 +159,10 @@ sudo snap install intellij-idea-community --classic
 ### Настройка Git
 
 ```shell
-git config --global user.name "John Doe" # здесь вписать ваше имя и фамилию
-git config --global user.email johndoe@example.com # здесь вписать ваш E-Mail
+# здесь вписать ваше имя и фамилию
+git config --global user.name "John Doe"
+# здесь вписать ваш E-Mail
+git config --global user.email johndoe@example.com
 ```
 
 ### PHP
