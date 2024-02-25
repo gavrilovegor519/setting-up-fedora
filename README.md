@@ -192,6 +192,20 @@ cd <project_name>
 php artisan serve
 ```
 
+### XAMPP
+
+```shell
+# Установка зависимостей
+sudo dnf install libnsl libxcrypt-compat
+# Установка XAMPP
+chmod 755 xampp-linux-*-installer.run
+sudo ./xampp-linux-*-installer.run
+# запускаем сервер
+sudo /opt/lampp/lampp start
+# Настраиваем настройки безопасности
+sudo /opt/lampp/lampp security
+```
+
 ### Node.js
 
 ```shell
