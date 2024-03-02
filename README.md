@@ -2,6 +2,10 @@
 
 ## Самое необходимое:
 
+Лимитирование объёма журнала systemd-journald: https://andreaskaris.github.io/blog/linux/setting-journalctl-limits/
+
+Ускорение DNF: https://g-soft.info/linux/9514/kak-uvelichit-skorost-dnf-v-fedora-linux/
+
 ```shell
 # Настройка RPM Fusion:
 sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -30,24 +34,6 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 
 Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator`.
 
-### Snap
-
-```shell
-sudo dnf install snapd
-# Дальше мы перезагружаемся
-sudo ln -s /var/lib/snapd/snap /snap
-# 2 раза вводим команду
-sudo snap install hello-world
-# Проверяем
-hello world
-```
-
-### Тюнинг системы
-
-Ускорение DNF: https://g-soft.info/linux/9514/kak-uvelichit-skorost-dnf-v-fedora-linux/
-
-Лимитирование объёма журнала systemd-journald: https://andreaskaris.github.io/blog/linux/setting-journalctl-limits/
-
 ### Flatseal
 
 ```shell
@@ -69,6 +55,18 @@ flatpak install flathub com.github.tchx84.Flatseal
 - org.freedesktop.Notifications
 - org.kde.StatusNotifierWatcher
 - org.kde.StatusNotifierItem
+
+### Snap
+
+```shell
+sudo dnf install snapd
+# Дальше мы перезагружаемся
+sudo ln -s /var/lib/snapd/snap /snap
+# 2 раза вводим команду
+sudo snap install hello-world
+# Проверяем
+hello-world
+```
 
 ## Менее необходимые программы:
 
@@ -100,27 +98,52 @@ flatpak install flathub org.audacityteam.Audacity
 flatpak install flathub org.telegram.desktop
 ```
 
-#### Почта
+### Виртуализация
+
+#### Docker
 
 ```shell
-flatpak install flathub org.gnome.Geary
+sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl start docker
+sudo docker run hello-world
+sudo usermod -aG docker $USER
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+sudo docker system prune -a --volumes
 ```
 
-### Загрузка файлов:
-
-#### Uget
+#### VirtualBox
 
 ```shell
-flatpak install flathub com.ugetdm.uGet
+sudo dnf install VirtualBox
+sudo usermod -a -G vboxusers $USER
+
+# Если включён Secure Boot:
+sudo /usr/sbin/kmodgenca
+sudo akmods --force --rebuild
+sudo mokutil --import /etc/pki/akmods/certs/public_key.der
 ```
 
-#### Transmission
+### Разработка
+
+#### Настройка Git
 
 ```shell
-flatpak install flathub com.transmissionbt.Transmission
+# здесь вписать ваше имя и фамилию
+git config --global user.name "John Doe"
+# здесь вписать ваш E-Mail
+git config --global user.email johndoe@example.com
 ```
 
-### Java (разработка):
+#### Postman
+
+```shell
+sudo snap install postman
+```
+
+#### Java (разработка):
 
 Сначала ставим через DNF:
 
@@ -142,28 +165,25 @@ sudo dnf install java-1.8.0-openjdk-devel
 
 Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика, либо Snap (если есть официальный пакет).
 
-#### Maven
-
-```shell
-sudo dnf install maven
-```
-
-#### IDEA Community
+##### IDEA Community
 
 ```shell
 sudo snap install intellij-idea-community --classic
 ```
 
-### Настройка Git
+##### Maven
 
 ```shell
-# здесь вписать ваше имя и фамилию
-git config --global user.name "John Doe"
-# здесь вписать ваш E-Mail
-git config --global user.email johndoe@example.com
+sudo dnf install maven
 ```
 
-### PHP
+#### VS Code
+
+```shell
+sudo snap install code --classic
+```
+
+#### PHP
 
 VS Code/PHPstorm - оф. сайт, либо Snap.
 
@@ -192,65 +212,27 @@ cd <project_name>
 php artisan serve
 ```
 
-### XAMPP
-
-```shell
-# Установка зависимостей
-sudo dnf install libnsl libxcrypt-compat
-# Установка XAMPP
-chmod 755 xampp-linux-*-installer.run
-sudo ./xampp-linux-*-installer.run
-# запускаем сервер
-sudo /opt/lampp/lampp start
-# Настраиваем настройки безопасности
-sudo /opt/lampp/lampp security
-```
-
-### Node.js
+#### Node.js
 
 ```shell
 sudo snap install node --classic
 sudo dnf install gcc-c++ make
 ```
 
-### VS Code
-
-```shell
-sudo snap install code --classic
-```
-
-### Postman
-
-```shell
-sudo snap install postman
-```
-
-### MongoDB Compass
+#### MongoDB Compass
 
 https://www.mongodb.com/try/download/compass
 
-### Docker:
+### Загрузка файлов:
+
+#### Uget
 
 ```shell
-sudo dnf -y install dnf-plugins-core
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo systemctl start docker
-sudo docker run hello-world
-sudo usermod -aG docker $USER
-sudo systemctl enable docker.service
-sudo systemctl enable containerd.service
-sudo docker system prune -a --volumes
+flatpak install flathub com.ugetdm.uGet
 ```
 
-### VirtualBox:
+#### Transmission
 
 ```shell
-sudo dnf install VirtualBox
-sudo usermod -a -G vboxusers $USER
-
-# Если включён Secure Boot:
-sudo /usr/sbin/kmodgenca
-sudo akmods --force --rebuild
-sudo mokutil --import /etc/pki/akmods/certs/public_key.der
+flatpak install flathub com.transmissionbt.Transmission
 ```
