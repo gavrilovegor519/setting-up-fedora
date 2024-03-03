@@ -25,6 +25,9 @@ sudo dnf install gnome-tweaks gnome-extensions-app
 # Разархиватор для RAR:
 sudo dnf install unrar
 
+# Снапшоты в BTRFS
+sudo dnf install btrfs-assistant
+
 # Зависимости для установки шрифтов от Microsoft:
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
 
@@ -112,6 +115,45 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 sudo docker system prune -a --volumes
+```
+
+##### Запуск графических приложений в Docker
+
+```shell
+curl -fsSL https://raw.githubusercontent.com/mviereck/x11docker/master/x11docker | sudo bash -s -- --update
+docker pull x11docker/xserver
+
+# Сборка контейнера с Debian Bullseye с LXDE
+x11docker --build x11docker/lxde
+
+# Запуск этого контейнера
+x11docker --desktop -m -g -c -I --lang --dbus --init=systemd --sudouser x11docker/lxde
+```
+
+Для того, чтобы каждый раз не вводить важные для этих контейнеров параметры,
+можно добавить эти параметры автоматически. Для этого нужно сделать две вещи:
+
+```shell
+mkdir -p .config/x11docker/preset
+nano .config/x11docker/preset/default
+```
+
+Дальше просто вставляем этот текст, и сохраняем:
+
+```
+-m
+-g
+-c
+-I
+--lang
+--dbus
+--sudouser
+```
+
+После этого контейнер можно запускать гораздо проще:
+
+```shell
+x11docker --desktop --init=systemd x11docker/lxde
 ```
 
 #### VirtualBox
