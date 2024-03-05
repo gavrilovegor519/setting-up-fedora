@@ -37,6 +37,14 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 
 Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator`.
 
+### Для Realtek RTL8821CE
+
+Чтобы этот Wi-Fi адаптер работал, надо сменить модуль ядра с `rtw88` на `rt8821ce`.
+
+Оно не входит в ядро, и поэтому его нужно собирать из исходников вручную.
+
+Инструкция: https://github.com/tomaspinho/rtl8821ce
+
 ### Flatseal
 
 ```shell
