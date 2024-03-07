@@ -41,6 +41,7 @@ sudo dnf install unrar
 
 # Снапшоты в BTRFS
 sudo dnf install btrfs-assistant
+sudo semanage permissive -a snapperd_t
 
 # Зависимости для установки шрифтов от Microsoft:
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
