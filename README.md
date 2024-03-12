@@ -39,10 +39,6 @@ sudo dnf install gnome-tweaks gnome-extensions-app
 # Разархиватор для RAR:
 sudo dnf install unrar
 
-# Снапшоты в BTRFS
-sudo dnf install btrfs-assistant
-sudo semanage permissive -a snapperd_t
-
 # Зависимости для установки шрифтов от Microsoft:
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
 
@@ -100,6 +96,12 @@ flatpak install flathub org.onlyoffice.desktopeditors
 
 ```shell
 flatpak install flathub com.obsproject.Studio
+```
+
+#### Kdenlive
+
+```shell
+flatpak install flathub org.kde.kdenlive
 ```
 
 #### Audacity
