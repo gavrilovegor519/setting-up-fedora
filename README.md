@@ -54,22 +54,6 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 flatpak install flathub com.github.tchx84.Flatseal
 ```
 
-#### Разрешения в Flatseal
-
-Эти разрешения надо добавлять в качестве глобальных:
-
-В **Device** надо добавить разрешение GPU (чтобы программы получили доступ к GPU).
-
-В **Session bus -> Переговоры** надо добавить следующие шины:
-
-- com.canonical.AppMenu.Registrar
-- com.canonical.dbusmenu
-- com.canonical.indicator.application
-- org.ayatana.indicator.application
-- org.freedesktop.Notifications
-- org.kde.StatusNotifierWatcher
-- org.kde.StatusNotifierItem
-
 ### Snap
 
 ```shell
