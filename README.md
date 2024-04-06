@@ -1,4 +1,4 @@
-# Пакеты для установки:
+# Пакеты для установки
 
 ## Для Realtek RTL8821CE
 
@@ -10,6 +10,8 @@
 
 ```shell
 sudo dnf install dkms
+git clone --depth=1 https://github.com/tomaspinho/rtl8821ce.git
+cd rtl8821ce/
 sudo ./dkms-install.sh
 sudo grubby --update-kernel=ALL --args=pcie_aspm=off
 sudo nano /etc/modprobe.d/rtw88_8821ce-blacklist.conf
@@ -17,7 +19,7 @@ sudo nano /etc/modprobe.d/rtw88_8821ce-blacklist.conf
 
 Дальше вставляем такой текст:
 
-```
+```text
 blacklist rtw88_8821ce
 ```
 
@@ -31,7 +33,7 @@ sudo mokutil --import /var/lib/dkms/mok.pub
 
 И перезагружаемся!
 
-## Самое необходимое:
+## Самое необходимое
 
 Лимитирование объёма журнала systemd-journald:
 
@@ -41,7 +43,7 @@ sudo nano /etc/systemd/journald.conf
 sudo systemctl restart systemd-journald.service
 ```
 
-Ускорение DNF: https://g-soft.info/linux/9514/kak-uvelichit-skorost-dnf-v-fedora-linux/
+Ускорение DNF (необязательно): <https://g-soft.info/linux/9514/kak-uvelichit-skorost-dnf-v-fedora-linux/>
 
 ```shell
 # Настройка RPM Fusion:
@@ -67,9 +69,9 @@ sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 ```
 
-Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator`.
+Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator` (<https://extensions.gnome.org/>).
 
-## Менее необходимые программы:
+## Менее необходимые программы
 
 ### Snap
 
@@ -80,7 +82,7 @@ sudo ln -s /var/lib/snapd/snap /snap
 # Дальше мы перезагружаемся
 
 # 2 раза вводим команду
-sudo snap install hello world
+sudo snap install hello-world
 
 # Проверяем
 hello-world
@@ -94,7 +96,7 @@ sudo dnf install google-chrome-stable
 
 ### Создание видео
 
-#### OBS Studio:
+#### OBS Studio
 
 ```shell
 flatpak install flathub com.obsproject.Studio
@@ -112,12 +114,18 @@ flatpak install flathub org.kde.kdenlive
 flatpak install flathub org.audacityteam.Audacity
 ```
 
-### Мессенджеры:
+### Мессенджеры
 
 #### Telegram
 
 ```shell
 flatpak install flathub org.telegram.desktop
+```
+
+#### Discord
+
+```shell
+flatpak install flathub com.discordapp.Discord
 ```
 
 ### Виртуализация
@@ -128,9 +136,6 @@ flatpak install flathub org.telegram.desktop
 sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo systemctl start docker
-sudo docker run hello-world
-sudo docker system prune -a --volumes
 sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
@@ -165,7 +170,7 @@ git config --global user.email gavrilovegor519@gmail.com
 sudo snap install postman
 ```
 
-#### Java (разработка):
+#### Java (разработка)
 
 Сначала ставим через DNF:
 
@@ -226,9 +231,9 @@ sudo dnf install gcc-c++ make
 
 #### MongoDB Compass
 
-https://www.mongodb.com/try/download/compass
+<https://www.mongodb.com/try/download/compass>
 
-### Загрузка файлов:
+### Загрузка файлов
 
 #### Uget
 
