@@ -62,6 +62,9 @@ sudo dnf install gnome-tweaks gnome-extensions-app
 # Разархиватор для RAR:
 sudo dnf install unrar
 
+# 7-Zip
+sudo dnf install p7zip p7zip-plugins
+
 # Зависимости для установки шрифтов от Microsoft:
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
 
@@ -70,6 +73,30 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 ```
 
 Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator` (<https://extensions.gnome.org/>).
+
+### Настройка swapfile в BTRFS
+
+```shell
+sudo btrfs subvolume create /swap
+cd /swap
+sudo btrfs filesystem mkswapfile --size 8G swapfile
+sudo swapon swapfile
+sudo nano /etc/fstab
+```
+
+Дальше в fstab **(в самый его конец!)**:
+
+```text
+/swap/swapfile none swap defaults 0 0
+```
+
+Потом делаем:
+
+```shell
+sudo systemctl daemon-reload
+```
+
+И ребутимся.
 
 ## Менее необходимые программы
 
@@ -92,6 +119,13 @@ hello-world
 
 ```shell
 sudo dnf install google-chrome-stable
+```
+
+### VLC
+
+```shell
+sudo dnf install vlc
+sudo dnf install python-vlc
 ```
 
 ### Создание видео
