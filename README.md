@@ -1,16 +1,52 @@
-# Пакеты для установки
+# Гайд по настройке Fedora
 
 ## Самое необходимое
 
-Лимитирование объёма журнала systemd-journald:
+### Лимитирование объёма журнала systemd-journald
 
 ```shell
 sudo nano /etc/systemd/journald.conf
-# Дальше меняем/добавляем параметр SystemMaxUse в блоке [Journal]
+```
+
+В файле `journald.conf` прописываем:
+
+```text
+[Journal]
+SystemMaxUse=50M
+```
+
+А дальше перезагружаем systemd-journald:
+
+```shell
 sudo systemctl restart systemd-journald.service
 ```
 
-Ускорение DNF (необязательно): <https://g-soft.info/linux/9514/kak-uvelichit-skorost-dnf-v-fedora-linux/>
+### Ускорение DNF
+
+```shell
+sudo nano /etc/dnf/dnf.conf
+```
+
+В конце файла добавляем:
+
+```text
+max_parallel_downloads=10
+fastestmirror=True
+minrate=500k
+```
+
+`minrate` можно увеличить до 1-2M, но в моём случае такой
+скорости уже достаточно для того, чтобы быстро грузились пакеты.
+
+Дальше осталось ввести эту команду:
+
+```shell
+sudo dnf upgrade --refresh
+```
+
+И готово!
+
+### Нужные пакеты
 
 ```shell
 # Настройка RPM Fusion:
@@ -97,8 +133,7 @@ sudo dnf install google-chrome-stable
 ### VLC
 
 ```shell
-sudo dnf install vlc
-sudo dnf install python-vlc
+sudo snap install vlc
 ```
 
 ### Создание видео
