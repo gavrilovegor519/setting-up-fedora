@@ -146,6 +146,7 @@ sudo dnf install google-chrome-stable
 
 ```shell
 sudo snap install vlc
+fc-cache -r -v
 ```
 
 ### Создание видео
@@ -281,8 +282,24 @@ sudo dnf install php php-common php-cli php-gd php-mysqlnd php-curl php-intl php
 ```shell
 sudo snap install node --classic
 sudo dnf install gcc-c++ make
-sudo npm i -g npm # 2 раза
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+nano ~/.bash_profile
 ```
+
+Дальше добавляем в конце:
+
+```shell
+export PATH=~/.npm-global/bin:$PATH
+```
+
+И запускаем последнюю команду:
+
+```shell
+npm i -g npm # 2 раза
+```
+
+Дальше просто ребутимся.
 
 #### MongoDB Compass
 
