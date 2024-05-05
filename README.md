@@ -101,6 +101,18 @@ sudo systemctl daemon-reload
 
 И ребутимся.
 
+### Сброс MOK в UEFI
+
+```shell
+sudo mokutil --reset
+```
+
+### Удаление старых ядер
+
+```shell
+sudo dnf remove --oldinstallonly
+```
+
 ## Менее необходимые программы
 
 ### fastfetch
@@ -269,6 +281,7 @@ sudo dnf install php php-common php-cli php-gd php-mysqlnd php-curl php-intl php
 ```shell
 sudo snap install node --classic
 sudo dnf install gcc-c++ make
+sudo npm i -g npm # 2 раза
 ```
 
 #### MongoDB Compass
