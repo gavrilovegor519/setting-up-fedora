@@ -1,45 +1,12 @@
 # Пакеты для установки
 
-## Для Realtek RTL8821CE
-
-Чтобы этот Wi-Fi адаптер нормально работал, надо сменить модуль ядра с `rtw88` на `rt8821ce`.
-
-Оно не входит в ядро, и поэтому его нужно собирать из исходников вручную.
-
-Сборка модуля:
-
-```shell
-sudo dnf install dkms
-git clone --depth=1 https://github.com/tomaspinho/rtl8821ce.git
-cd rtl8821ce/
-sudo ./dkms-install.sh
-sudo grubby --update-kernel=ALL --args=pcie_aspm=off
-sudo nano /etc/modprobe.d/rtw88_8821ce-blacklist.conf
-```
-
-Дальше вставляем такой текст:
-
-```text
-blacklist rtw88_8821ce
-```
-
-И сохраняем!
-
-Если есть Secure Boot:
-
-```shell
-sudo mokutil --import /var/lib/dkms/mok.pub
-```
-
-И перезагружаемся!
-
 ## Самое необходимое
 
 Лимитирование объёма журнала systemd-journald:
 
 ```shell
 sudo nano /etc/systemd/journald.conf
-# Дальше меняем параметр SystemMaxUse
+# Дальше меняем/добавляем параметр SystemMaxUse в блоке [Journal]
 sudo systemctl restart systemd-journald.service
 ```
 
@@ -99,6 +66,12 @@ sudo systemctl daemon-reload
 И ребутимся.
 
 ## Менее необходимые программы
+
+### fastfetch
+
+```shell
+sudo dnf install fastfetch
+```
 
 ### Snap
 
