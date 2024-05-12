@@ -62,12 +62,6 @@ sudo dnf install mozilla-openh264
 # Утилиты для кастомизации GNOME:
 sudo dnf install gnome-tweaks gnome-extensions-app
 
-# Разархиватор для RAR:
-sudo dnf install unrar
-
-# 7-Zip
-sudo dnf install p7zip p7zip-plugins
-
 # Зависимости для установки шрифтов от Microsoft:
 sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
 
@@ -115,6 +109,18 @@ sudo dnf remove --oldinstallonly
 
 ## Менее необходимые программы
 
+### Дополнительные настройки для Network Manager
+
+```shell
+sudo dnf install nm-connection-editor-desktop
+```
+
+### Поддержка libcamera в Pipewire
+
+```shell
+sudo dnf install pipewire-plugin-libcamera
+```
+
 ### fastfetch
 
 ```shell
@@ -147,6 +153,18 @@ sudo dnf install google-chrome-stable
 ```shell
 sudo snap install vlc
 fc-cache -r -v
+```
+
+### RAR
+
+```shell
+sudo dnf install unrar
+```
+
+### 7-Zip
+
+```shell
+sudo dnf install p7zip p7zip-plugins
 ```
 
 ### Создание видео
@@ -191,6 +209,37 @@ flatpak install flathub com.discordapp.Discord
 sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+Дальше мы выносим файлы Docker'а в отдельный subvolume BTRFS'а, чтобы было удобнее юзать снапшоты:
+
+```shell
+sudo btrfs subvolume create /docker-data
+```
+
+И настраиваем их в конфигах:
+
+```shell
+sudo nano /etc/docker/daemon.json
+```
+
+```text
+{
+  "data-root": "/docker-data/docker"
+}
+```
+
+```shell
+sudo nano /etc/containerd/config.toml
+```
+
+```text
+root = "/docker-data/containerd"
+```
+
+И делаем завершающие шаги:
+
+```shell
 sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
