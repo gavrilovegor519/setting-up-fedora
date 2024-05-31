@@ -205,6 +205,8 @@ flatpak install flathub com.discordapp.Discord
 
 #### Docker
 
+**Docker Hub разблокирован в России 3 июня 2024**
+
 ```shell
 sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
@@ -324,6 +326,44 @@ sudo snap install code --classic
 
 ```shell
 sudo dnf install php php-common php-cli php-gd php-mysqlnd php-curl php-intl php-mbstring php-bcmath php-xml php-zip composer
+```
+
+##### XAMPP (лучше, чем использовать Docker, когда нужен только LAMP)
+
+Ставим зависимости:
+
+```shell
+sudo dnf install libnsl libxcrypt-compat
+```
+
+Далее качаем XAMPP с официального сайта (<https://www.apachefriends.org/ru/index.html>),
+и устанавливаем его:
+
+```shell
+chmod 755 xampp-linux-*-installer.run
+sudo ./xampp-linux-*-installer.run
+```
+
+И запускаем:
+
+```shell
+sudo /opt/lampp/lampp start
+```
+
+Остановка:
+
+```shell
+sudo /opt/lampp/lampp stop
+```
+
+Для удобной работы с ним, делаем следующие команды:
+
+```shell
+cd /opt/lampp
+sudo chown $USER:$USER htdocs
+chmod 775 htdocs
+cd
+ln -s /opt/lampp/htdocs/ ~/htdocs
 ```
 
 #### Node.js
