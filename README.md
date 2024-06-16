@@ -31,7 +31,6 @@ sudo nano /etc/dnf/dnf.conf
 
 ```text
 max_parallel_downloads=10
-fastestmirror=True
 minrate=500k
 ```
 
@@ -76,7 +75,9 @@ sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore
 ```shell
 sudo btrfs subvolume create /swap
 cd /swap
-sudo btrfs filesystem mkswapfile --size 8G swapfile
+# При >=8 гигах ОЗУ с включённым zram хватит
+# и пару гигов (на случай, когда вообще наступит OOM даже с zram)
+sudo btrfs filesystem mkswapfile --size 2G swapfile
 sudo swapon swapfile
 sudo nano /etc/fstab
 ```
@@ -113,12 +114,6 @@ sudo dnf remove --oldinstallonly
 
 ```shell
 sudo dnf install nm-connection-editor-desktop
-```
-
-### Поддержка libcamera в Pipewire
-
-```shell
-sudo dnf install pipewire-plugin-libcamera
 ```
 
 ### fastfetch
@@ -328,7 +323,7 @@ sudo snap install code --classic
 sudo dnf install php php-common php-cli php-gd php-mysqlnd php-curl php-intl php-mbstring php-bcmath php-xml php-zip composer
 ```
 
-##### XAMPP (лучше, чем использовать Docker, когда нужен только LAMP)
+##### XAMPP (если вам не хочется Docker'а)
 
 Ставим зависимости:
 
@@ -368,27 +363,7 @@ ln -s /opt/lampp/htdocs/ ~/htdocs
 
 #### Node.js
 
-```shell
-sudo snap install node --classic
-sudo dnf install gcc-c++ make
-mkdir ~/.npm-global
-npm config set prefix '~/.npm-global'
-nano ~/.bash_profile
-```
-
-Дальше добавляем в конце:
-
-```shell
-export PATH=~/.npm-global/bin:$PATH
-```
-
-И запускаем последнюю команду:
-
-```shell
-npm i -g npm # 2 раза
-```
-
-Дальше просто ребутимся.
+<https://nodejs.org/en/download/package-manager>
 
 #### MongoDB Compass
 
