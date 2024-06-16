@@ -178,9 +178,7 @@ flatpak install flathub org.kde.kdenlive
 
 #### Audacity
 
-```shell
-flatpak install flathub org.audacityteam.Audacity
-```
+<https://www.audacityteam.org/download/>
 
 ### Мессенджеры
 
@@ -192,9 +190,7 @@ flatpak install flathub org.telegram.desktop
 
 #### Discord
 
-```shell
-flatpak install flathub com.discordapp.Discord
-```
+<https://discord.com/download>
 
 ### Виртуализация
 
@@ -249,7 +245,7 @@ sudo dnf install VirtualBox
 sudo usermod -a -G vboxusers $USER
 
 # Если включён Secure Boot:
-sudo /usr/sbin/kmodgenca
+sudo /usr/sbin/kmodgenca -a
 sudo akmods --force --rebuild
 sudo mokutil --import /etc/pki/akmods/certs/public_key.der
 ```
@@ -270,6 +266,10 @@ git config --global user.email gavrilovegor519@gmail.com
 ```shell
 sudo snap install postman
 ```
+
+#### JetBrains Toolbox
+
+<https://www.jetbrains.com/toolbox/app/>
 
 #### Java (разработка)
 
@@ -292,12 +292,6 @@ sudo dnf install java-1.8.0-openjdk-devel
 ```
 
 Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика, либо Snap (если есть официальный пакет).
-
-##### IDEA Community
-
-```shell
-sudo snap install intellij-idea-community --classic
-```
 
 ##### Maven
 
@@ -374,7 +368,7 @@ ln -s /opt/lampp/htdocs/ ~/htdocs
 #### Uget
 
 ```shell
-flatpak install flathub com.ugetdm.uGet
+sudo dnf install uget
 ```
 
 #### Transmission
