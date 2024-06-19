@@ -172,9 +172,7 @@ flatpak install flathub com.obsproject.Studio
 
 #### Kdenlive
 
-```shell
-flatpak install flathub org.kde.kdenlive
-```
+<https://kdenlive.org/en/download/>
 
 #### Audacity
 
@@ -184,9 +182,7 @@ flatpak install flathub org.kde.kdenlive
 
 #### Telegram
 
-```shell
-flatpak install flathub org.telegram.desktop
-```
+<https://desktop.telegram.org/>
 
 #### Discord
 
@@ -301,9 +297,9 @@ sudo dnf install maven
 
 #### VS Code
 
-```shell
-sudo snap install code --classic
-```
+<https://code.visualstudio.com/docs/setup/linux>
+
+Лучше всего его ставить в формате RPM, а не в Snap.
 
 #### PHP
 
@@ -373,9 +369,7 @@ sudo dnf install uget
 
 #### Transmission
 
-```shell
-flatpak install flathub com.transmissionbt.Transmission
-```
+<https://transmissionbt.com/download>
 
 ### Снапшоты в BTRFS
 
