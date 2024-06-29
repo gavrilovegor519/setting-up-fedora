@@ -263,9 +263,9 @@ git config --global user.email gavrilovegor519@gmail.com
 sudo snap install postman
 ```
 
-#### JetBrains Toolbox
+#### Intellij IDEA
 
-<https://www.jetbrains.com/toolbox/app/>
+<https://www.jetbrains.com/help/idea/installation-guide.html>
 
 #### Java (разработка)
 
@@ -287,7 +287,7 @@ sudo dnf install java-11-openjdk-devel
 sudo dnf install java-1.8.0-openjdk-devel
 ```
 
-Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика, либо Snap (если есть официальный пакет).
+Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика.
 
 ##### Maven
 
