@@ -236,14 +236,21 @@ sudo systemctl enable containerd.service
 
 #### VirtualBox
 
-```shell
-sudo dnf install VirtualBox
-sudo usermod -a -G vboxusers $USER
+Сначала ставим VBox по данному гайду: <https://www.virtualbox.org/wiki/Linux_Downloads>
 
-# Если включён Secure Boot:
-sudo /usr/sbin/kmodgenca -a
-sudo akmods --force --rebuild
-sudo mokutil --import /etc/pki/akmods/certs/public_key.der
+Потом (если включён Secure Boot):
+
+```shell
+sudo mkdir -p /var/lib/shim-signed/mok
+sudo openssl req -nodes -new -x509 -newkey rsa:2048 -outform DER -addext "extendedKeyUsage=codeSigning" -keyout /var/lib/shim-signed/mok/MOK.priv -out /var/lib/shim-signed/mok/MOK.der
+sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
+sudo usermod -aG vboxusers $USER
+```
+
+Дальше ребутимся, потом:
+
+```shell
+sudo rcvboxdrv setup
 ```
 
 ### Разработка
