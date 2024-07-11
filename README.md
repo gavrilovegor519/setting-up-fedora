@@ -192,8 +192,6 @@ flatpak install flathub com.obsproject.Studio
 
 #### Docker
 
-**Docker Hub разблокирован в России 3 июня 2024**
-
 ```shell
 sudo dnf -y install dnf-plugins-core
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
@@ -236,7 +234,11 @@ sudo systemctl enable containerd.service
 
 #### VirtualBox
 
-Сначала ставим VBox по данному гайду: <https://www.virtualbox.org/wiki/Linux_Downloads>
+```shell
+sudo dnf install dkms
+```
+
+Потом ставим VBox по данному гайду: <https://www.virtualbox.org/wiki/Linux_Downloads>
 
 Потом (если включён Secure Boot):
 
