@@ -236,7 +236,11 @@ sudo systemctl enable containerd.service
 
 #### VirtualBox
 
-Сначала ставим VBox по данному гайду: <https://www.virtualbox.org/wiki/Linux_Downloads>
+```shell
+sudo dnf install dkms
+```
+
+Потом ставим VBox по данному гайду: <https://www.virtualbox.org/wiki/Linux_Downloads>
 
 Потом (если включён Secure Boot):
 
