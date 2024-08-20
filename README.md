@@ -4,69 +4,15 @@
 
 ### Лимитирование объёма журнала systemd-journald
 
-```shell
-sudo nano /etc/systemd/journald.conf
-```
-
-В файле `journald.conf` прописываем:
-
-```text
-[Journal]
-SystemMaxUse=50M
-```
-
-А дальше перезагружаем systemd-journald:
-
-```shell
-sudo systemctl restart systemd-journald.service
-```
+Используйте скрипт `journald-limit.sh` в папке `scripts`.
 
 ### Ускорение DNF
 
-```shell
-sudo nano /etc/dnf/dnf.conf
-```
-
-В конце файла добавляем:
-
-```text
-max_parallel_downloads=10
-minrate=500k
-```
-
-`minrate` можно увеличить до 1-2M, но в моём случае такой
-скорости уже достаточно для того, чтобы быстро грузились пакеты.
-
-Дальше осталось ввести эту команду:
-
-```shell
-sudo dnf upgrade --refresh
-```
-
-И готово!
+Используйте скрипт `dnf-boost.sh` в папке `scripts`.
 
 ### Нужные пакеты
 
-```shell
-# Настройка RPM Fusion:
-sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf groupupdate core
-
-# Установка патентованных кодеков:
-sudo dnf swap ffmpeg-free ffmpeg --allowerasing
-sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-sudo dnf groupupdate sound-and-video
-sudo dnf install mozilla-openh264
-
-# Утилиты для кастомизации GNOME:
-sudo dnf install gnome-tweaks gnome-extensions-app
-
-# Зависимости для установки шрифтов от Microsoft:
-sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
-
-# Установка шрифтов от Microsoft
-sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-```
+Используйте скрипт `install-base-packages.sh` в папке `scripts`.
 
 Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator` (<https://extensions.gnome.org/>).
 
@@ -110,18 +56,6 @@ sudo dnf remove --oldinstallonly
 
 ## Менее необходимые программы
 
-### Дополнительные настройки для Network Manager
-
-```shell
-sudo dnf install nm-connection-editor-desktop
-```
-
-### fastfetch
-
-```shell
-sudo dnf install fastfetch
-```
-
 ### Snap
 
 ```shell
@@ -137,29 +71,11 @@ sudo snap install hello-world
 hello-world
 ```
 
-### Google Chrome
-
-```shell
-sudo dnf install google-chrome-stable
-```
-
 ### VLC
 
 ```shell
 sudo snap install vlc
 fc-cache -r -v
-```
-
-### RAR
-
-```shell
-sudo dnf install unrar
-```
-
-### 7-Zip
-
-```shell
-sudo dnf install p7zip p7zip-plugins
 ```
 
 ### Создание видео
@@ -238,8 +154,6 @@ sudo systemctl enable containerd.service
 sudo dnf install dkms
 ```
 
-Потом ставим VBox по данному гайду: <https://www.virtualbox.org/wiki/Linux_Downloads>
-
 Потом (если включён Secure Boot):
 
 ```shell
@@ -249,11 +163,9 @@ sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
 sudo usermod -aG vboxusers $USER
 ```
 
-Дальше ребутимся, потом:
+Дальше ребутимся.
 
-```shell
-sudo rcvboxdrv setup
-```
+Потом ставим VBox по данному гайду: <https://www.virtualbox.org/wiki/Linux_Downloads>
 
 ### Разработка
 
@@ -279,6 +191,12 @@ sudo snap install postman
 #### Java (разработка)
 
 Сначала ставим через DNF:
+
+```shell
+sudo dnf install java-21-openjdk-devel
+```
+
+Если нужен Java 17:
 
 ```shell
 sudo dnf install java-17-openjdk-devel
