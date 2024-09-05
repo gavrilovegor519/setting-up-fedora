@@ -88,21 +88,29 @@ flatpak install flathub com.obsproject.Studio
 
 #### Kdenlive
 
-<https://kdenlive.org/en/download/>
+```shell
+flatpak install flathub org.kde.kdenlive
+```
 
 #### Audacity
 
-<https://www.audacityteam.org/download/>
+```shell
+flatpak install flathub org.audacityteam.Audacity
+```
 
 ### Мессенджеры
 
 #### Telegram
 
-<https://desktop.telegram.org/>
+```shell
+flatpak install flathub org.telegram.desktop
+```
 
 #### Discord
 
-<https://discord.com/download>
+```shell
+flatpak install flathub com.discordapp.Discord
+```
 
 ### Виртуализация
 
@@ -284,19 +292,23 @@ ln -s /opt/lampp/htdocs/ ~/htdocs
 
 #### MongoDB Compass
 
-<https://www.mongodb.com/try/download/compass>
+```shell
+flatpak install flathub com.mongodb.Compass
+```
 
 ### Загрузка файлов
 
 #### Uget
 
 ```shell
-sudo dnf install uget
+flatpak install flathub com.ugetdm.uGet
 ```
 
 #### Transmission
 
-<https://transmissionbt.com/download>
+```shell
+flatpak install flathub com.transmissionbt.Transmission
+```
 
 ### Снапшоты в BTRFS
 
