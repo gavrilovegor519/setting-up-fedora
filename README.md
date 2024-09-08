@@ -56,6 +56,12 @@ sudo dnf remove --oldinstallonly
 
 ## Менее необходимые программы
 
+### KeepassXC
+
+```shell
+flatpak install flathub org.keepassxc.KeePassXC
+```
+
 ### Snap
 
 ```shell
@@ -292,9 +298,7 @@ ln -s /opt/lampp/htdocs/ ~/htdocs
 
 #### MongoDB Compass
 
-```shell
-flatpak install flathub com.mongodb.Compass
-```
+<https://www.mongodb.com/try/download/compass>
 
 ### Загрузка файлов
 
