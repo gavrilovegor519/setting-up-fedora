@@ -192,6 +192,12 @@ git config --global user.name "Egor Gavrilov"
 git config --global user.email gavrilovegor519@gmail.com
 ```
 
+#### DBeaver
+
+```shell
+flatpak install flathub io.dbeaver.DBeaverCommunity
+```
+
 #### Postman
 
 ```shell
