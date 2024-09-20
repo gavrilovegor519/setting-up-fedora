@@ -1,4 +1,10 @@
-#!/bin/sh
+#!/bin/bash -eu
+
+if [ "$(id -u)" -ne 0 ]; then
+        echo 'This script must be run by root' >&2
+        exit 1
+fi
+
 dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 dnf groupupdate -y core
 dnf swap ffmpeg-free ffmpeg --allowerasing -y
