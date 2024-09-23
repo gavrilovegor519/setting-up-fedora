@@ -58,12 +58,6 @@ sudo dnf remove --oldinstallonly
 
 ## Менее необходимые программы
 
-### KeepassXC
-
-```shell
-flatpak install flathub org.keepassxc.KeePassXC
-```
-
 ### Snap
 
 ```shell
@@ -104,6 +98,12 @@ flatpak install flathub org.kde.kdenlive
 
 ```shell
 flatpak install flathub org.audacityteam.Audacity
+```
+
+### KeepassXC
+
+```shell
+flatpak install flathub org.keepassxc.KeePassXC
 ```
 
 ### Мессенджеры
@@ -184,12 +184,21 @@ sudo dnf install dkms
 sudo mkdir -p /var/lib/shim-signed/mok
 sudo openssl req -nodes -new -x509 -newkey rsa:2048 -outform DER -addext "extendedKeyUsage=codeSigning" -keyout /var/lib/shim-signed/mok/MOK.priv -out /var/lib/shim-signed/mok/MOK.der
 sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
-sudo usermod -aG vboxusers $USER
 ```
+
+Дальше читаем это: <https://github.com/dell/dkms?tab=readme-ov-file#module-signing>
 
 Дальше ребутимся.
 
 Потом ставим VBox по данному гайду: <https://www.virtualbox.org/wiki/Linux_Downloads>
+
+И после установки вызываем эту команду:
+
+```shell
+sudo usermod -aG vboxusers $USER
+```
+
+И ребутимся опять.
 
 ### Разработка
 
