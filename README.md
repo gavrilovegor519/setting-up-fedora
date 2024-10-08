@@ -76,8 +76,7 @@ hello-world
 ### VLC
 
 ```shell
-sudo snap install vlc
-fc-cache -r -v
+flatpak install flathub org.videolan.VLC
 ```
 
 ### Создание видео
@@ -253,8 +252,6 @@ sudo dnf install java-11-openjdk-devel
 sudo dnf install java-1.8.0-openjdk-devel
 ```
 
-Eclipse/Intellij IDEA/VS Code/NetBeans - официальный сайт разработчика.
-
 ##### Maven
 
 ```shell
@@ -265,7 +262,7 @@ sudo dnf install maven
 
 <https://code.visualstudio.com/docs/setup/linux>
 
-Лучше всего его ставить в формате RPM, а не в Snap.
+Лучше всего его ставить в формате RPM, а не в Snap/Flatpak.
 
 #### PHP
 
@@ -323,7 +320,9 @@ ln -s /opt/lampp/htdocs/ ~/htdocs
 
 #### MongoDB Compass
 
-<https://www.mongodb.com/try/download/compass>
+```shell
+flatpak install flathub com.mongodb.Compass
+```
 
 ### Загрузка файлов
 
@@ -342,9 +341,7 @@ flatpak install flathub com.transmissionbt.Transmission
 ### Снапшоты в BTRFS
 
 ```shell
-sudo dnf install btrfs-assistant
-sudo semanage permissive -a snapperd_t
-# Дальше его настраиваем, как хотим
+sudo dnf install timeshift # необходимы подтома @ и @home
 ```
 
 ### Flatseal
