@@ -109,20 +109,11 @@ flatpak install flathub com.discordapp.Discord
 #### Docker
 
 ```shell
-sudo dnf -y install dnf-plugins-core
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
-sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 ```
 
-Для DNF5:
-
-```shell
-sudo dnf -y install dnf-plugins-core
-sudo dnf config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
-sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-```
-
-Дальше мы выносим файлы Docker'а в отдельный subvolume BTRFS'а, чтобы было удобнее юзать снапшоты:
+Дальше мы выносим файлы Docker'а в отдельный subvolume BTRFS'а **(по желанию)**, чтобы было удобнее юзать снапшоты:
 
 ```shell
 sudo btrfs subvolume create /docker-data
@@ -205,8 +196,10 @@ flatpak install flathub io.dbeaver.DBeaverCommunity
 
 ```shell
 flatpak install flathub com.getpostman.Postman
+
+# фиксим проблему с запуском программы
 mkdir -p ~/.var/app/com.getpostman.Postman/config/Postman/proxy
-cd  ~/.var/app/com.getpostman.Postman/config/Postman/proxy
+cd ~/.var/app/com.getpostman.Postman/config/Postman/proxy
 openssl req -subj '/C=US/CN=Postman Proxy' -new -newkey rsa:2048 -sha256 -days 365 -nodes -x509 -keyout postman-proxy-ca.key -out postman-proxy-ca.crt
 ```
 
