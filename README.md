@@ -16,6 +16,12 @@
 
 Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator` (<https://extensions.gnome.org/>).
 
+### Chrome Flatpak
+
+```shell
+flatpak install flathub com.google.Chrome
+```
+
 ### Настройка swapfile в BTRFS
 
 ```shell
