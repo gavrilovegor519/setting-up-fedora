@@ -16,12 +16,6 @@
 
 Также можно установить расширения для GNOME: `Blur my Shell`, `Appindicator` (<https://extensions.gnome.org/>).
 
-### Chrome Flatpak
-
-```shell
-flatpak install flathub com.google.Chrome
-```
-
 ### Настройка swapfile в BTRFS
 
 ```shell
@@ -67,7 +61,7 @@ sudo dnf remove --oldinstallonly
 ### VLC
 
 ```shell
-flatpak install flathub org.videolan.VLC
+sudo dnf install vlc
 ```
 
 ### Создание видео
@@ -201,12 +195,24 @@ flatpak install flathub io.dbeaver.DBeaverCommunity
 #### Postman
 
 ```shell
-flatpak install flathub com.getpostman.Postman
-
-# фиксим проблему с запуском программы
-mkdir -p ~/.var/app/com.getpostman.Postman/config/Postman/proxy
-cd ~/.var/app/com.getpostman.Postman/config/Postman/proxy
-openssl req -subj '/C=US/CN=Postman Proxy' -new -newkey rsa:2048 -sha256 -days 365 -nodes -x509 -keyout postman-proxy-ca.key -out postman-proxy-ca.crt
+sudo dnf install openssl
+cd /tmp
+wget https://dl.pstmn.io/download/latest/linux64 -O postman-linux-x64.tar.gz
+sudo tar xvzf postman-linux-x64.tar.gz -C /opt
+ 
+cat << EOF > ~/.local/share/applications/postman2.desktop
+[Desktop Entry]
+Name=Postman
+GenericName=API Client
+X-GNOME-FullName=Postman API Client
+Comment=Make and view REST API calls and responses
+Keywords=api;
+Exec=/opt/Postman/Postman
+Terminal=false
+Type=Application
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Categories=Development;Utilities;
+EOF
 ```
 
 #### Intellij IDEA
@@ -316,13 +322,13 @@ flatpak install flathub com.mongodb.Compass
 #### Uget
 
 ```shell
-flatpak install flathub com.ugetdm.uGet
+sudo dnf install uget
 ```
 
 #### Transmission
 
 ```shell
-flatpak install flathub com.transmissionbt.Transmission
+sudo dnf install transmission
 ```
 
 ### Снапшоты в BTRFS
