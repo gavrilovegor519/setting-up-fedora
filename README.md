@@ -194,26 +194,7 @@ flatpak install flathub io.dbeaver.DBeaverCommunity
 
 #### Postman
 
-```shell
-sudo dnf install openssl
-cd /tmp
-wget https://dl.pstmn.io/download/latest/linux64 -O postman-linux-x64.tar.gz
-sudo tar xvzf postman-linux-x64.tar.gz -C /opt
- 
-cat << EOF > ~/.local/share/applications/postman2.desktop
-[Desktop Entry]
-Name=Postman
-GenericName=API Client
-X-GNOME-FullName=Postman API Client
-Comment=Make and view REST API calls and responses
-Keywords=api;
-Exec=/opt/Postman/Postman
-Terminal=false
-Type=Application
-Icon=/opt/Postman/app/resources/app/assets/icon.png
-Categories=Development;Utilities;
-EOF
-```
+Используйте скрипт `install-postman.sh`.
 
 #### Intellij IDEA
 
@@ -328,7 +309,7 @@ sudo dnf install uget
 #### Transmission
 
 ```shell
-sudo dnf install transmission
+flatpak install flathub com.transmissionbt.Transmission
 ```
 
 ### Снапшоты в BTRFS
