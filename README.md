@@ -292,11 +292,9 @@ ln -s /opt/lampp/htdocs/ ~/htdocs
 
 <https://nodejs.org/en/download/package-manager>
 
-#### Mongo Express (аналог MongoDB Compass)
+#### MongoDB Compass
 
-```shell
-docker run -e ME_CONFIG_MONGODB_SERVER=some-mongo -p 8081:8081 mongo-express
-```
+<https://github.com/mongodb-js/compass/releases/latest>
 
 ### Загрузка файлов
 
