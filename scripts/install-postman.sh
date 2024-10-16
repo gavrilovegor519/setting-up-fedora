@@ -1,8 +1,8 @@
 #!/bin/bash
 
-sudo dnf install -y openssl
-wget https://dl.pstmn.io/download/latest/linux64 -O postman-linux-x64.tar.gz
-sudo tar xvzf postman-linux-x64.tar.gz -C /opt
+wget https://dl.pstmn.io/download/latest/linux64 -O /tmp/postman-linux-x64.tar.gz
+sudo tar xvzf /tmp/postman-linux-x64.tar.gz -C /opt
+rm /tmp/postman-linux-x64.tar.gz
 
 cat << EOF > ~/.local/share/applications/Postman.desktop
 [Desktop Entry]
