@@ -303,7 +303,7 @@ flatpak install flathub com.mongodb.Compass
 #### Uget
 
 ```shell
-sudo dnf install uget
+flatpak install flathub com.ugetdm.uGet
 ```
 
 #### Transmission
